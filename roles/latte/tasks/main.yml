@@ -9,9 +9,25 @@
   become: yes
   become_user: "{{ user }}"
 
+- name: Init latte
+  shell: {{ item }}
+  with_items:
+    - latte-dock &
+    - sleep 5
+    - killall latte-dock
+
 - name: Copy config
   copy:
-    src: kubu.layout.latte
+    src: krovo.layout.latte
     dest: ~{{ user }}/
     owner: "{{ user }}"
     group: "{{ user }}"
+
+- name: Change layout
+  shell: {{ item }}
+  with_items:
+    - kwriteconfig5 --file lattedockrc --group UniversalSettings \
+      --key currentLayout "krovo"
+    - kwriteconfig5 --file lattedockrc --group UniversalSettings \
+      --key lastNonAssignedLayout "krovo"
+    - latte-dock &
