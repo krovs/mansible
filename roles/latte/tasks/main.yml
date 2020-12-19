@@ -4,10 +4,10 @@
     name: latte-dock
   become: yes
 
-- name: Execute config script
-  script: start.sh
-  become: yes
-  become_user: "{{ user }}"
+# - name: Execute config script
+#   script: start.sh
+#   become: yes
+#   become_user: "{{ user }}"
 
 - name: Init latte
   shell: "{{ item }}"
