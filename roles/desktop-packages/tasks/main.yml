@@ -1,0 +1,11 @@
+---
+- name: Install desktop packages
+  pacman:
+    name: "{{ desktop_packages.repos }}"
+    state: present
+  become: yes
+
+- name: Install AUR desktop packages
+  aur: name="{{ desktop_packages.aur }}" aur_only=yes
+  become: yes
+  become_user: aur_builder

@@ -1,0 +1,10 @@
+---
+- name: Update cache
+  pacman:
+    update_cache: true
+  become: yes
+
+- name: Upgrade
+  pacman:
+    upgrade: true
+  become: yes

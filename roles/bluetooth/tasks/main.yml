@@ -1,0 +1,17 @@
+---
+- name: Unzip bt drivers
+  unarchive:
+    src: driver.zip
+    dest: /tmp/
+
+- name: Build drivers
+  make:
+    chdir: /tmp/20200610_LINUX_BT_DRIVER/
+    target: install
+    params:
+      INTERFACE: all
+  become: yes
+  register: test
+
+- debug: msg="{{ test.stdout }}"
+

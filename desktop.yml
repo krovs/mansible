@@ -1,0 +1,32 @@
+---
+- name: Desktop playbook
+  hosts: local
+  become: yes
+  roles:
+    - { role: pacman }
+    - { role: aur }
+    - { role: base-packages }
+    - { role: desktop-packages }
+    - { role: git }
+    - { role: docker }
+    - { role: python }
+    - { role: bluetooth }
+    - { role: latte }
+    - { role: logitech }
+    - { role: user }
+
+  post_tasks:
+    - name:  ToDo
+      debug:
+        msg:
+          - '##################################################################'
+          - ''
+          - '     Things left to do:'
+          - ''
+          - '     - remove default kde panel'
+          - '     - select themes'
+          - '         - App style: Breeze, rest: nordic'
+          - '     - set login screen'
+          - '     - set locales, add es'
+          - ''
+          - '##################################################################'

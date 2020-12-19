@@ -1,0 +1,17 @@
+---
+- name: Install Latte
+  pacman:
+    name: latte-dock
+  become: yes
+
+- name: Execute config script
+  script: start.sh
+  become: yes
+  become_user: "{{ user }}"
+
+- name: Copy config
+  copy:
+    src: kubu.layout.latte
+    dest: ~{{ user }}/
+    owner: "{{ user }}"
+    group: "{{ user }}"

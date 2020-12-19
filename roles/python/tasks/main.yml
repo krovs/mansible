@@ -1,0 +1,14 @@
+---
+- name: Install Python stuff
+  pacman:
+    name:
+      - python
+      - python-pip
+      - python-virtualenv
+  become: yes
+
+- name: Install pip modules
+  pip:
+    name: "{{ pip_packages }}"
+    state: present
+  become: yes

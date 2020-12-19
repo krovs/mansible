@@ -1,0 +1,21 @@
+---
+- name: Install git
+  pacman:
+    name: git
+  become: yes
+
+- name: Configure git name
+  git_config:
+    name: user.name
+    value: "{{ git.user }}"
+    scope: global
+  become: yes
+  become_user: "{{ user }}"
+
+- name: Configure git email
+  git_config:
+    name: user.email
+    value: "{{ git.email }}"
+    scope: global
+  become: yes
+  become_user: "{{ user }}"

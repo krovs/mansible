@@ -1,0 +1,11 @@
+---
+- name: Install base packages
+  pacman:
+    name: "{{ base_packages.repos }}"
+    state: present
+  become: yes
+
+- name: Install AUR base packages
+  aur: name="{{ base_packages.aur }}" aur_only=yes
+  become: yes
+  become_user: aur_builder

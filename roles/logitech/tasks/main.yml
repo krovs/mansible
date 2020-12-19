@@ -1,0 +1,37 @@
+---
+# - name: Clone logi repo
+#   git:
+#     repo: https://github.com/krovs/mxmaster-mapper-linux.git
+#     dest: /tmp/logi
+#   become: yes
+#   become_user: "{{ user }}"
+
+# - name: Chmod executable
+#   file:
+#     path: /tmp/logi/setup.sh
+#     mode: u+x
+
+# - name: Execute
+#   shell: /tmp/logi/setup.sh
+
+- name: Install depends
+  pacman:
+    name:
+      - xbindkeys
+      - xautomation
+      - xdotool
+  become: yes
+
+- name: Copy dotfile
+  copy:
+    src: "xbindkeysrc"
+    dest: ~{{ user }}/.xbindkeysrc
+    owner: "{{ user }}"
+    group: "{{ user }}"
+  become: yes
+  become_user: "{{ user }}"
+
+- name: Execute
+  shell: xbindkeys
+  become: yes
+  become_user: "{{ user }}"

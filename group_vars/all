@@ -1,0 +1,58 @@
+base_packages:
+  repos:
+    - docker
+    - docker-compose
+    - curl
+    - net-tools
+    - pamac
+    - flameshot
+    - unzip
+    - virtualbox
+    - kvantum-qt5
+    - papirus-icon-theme
+    - base-devel
+    - neofetch
+    - lolcat
+    - yay
+    - vlc
+    - make
+    - curl
+    - gcc
+    - nmap
+    - gimp
+    - htop
+    - gnome-keyring
+    - transmission-qt
+    - traceroute
+  aur:
+    - typora
+    - spotify
+    - visual-studio-code-bin
+    - insync
+    - insync-dolphin
+    - papirus-folders
+    - nordic-kde-git
+
+desktop_packages:
+  repos:
+    - solaar
+  aur:
+    - obinskit
+    - mulllvad-vpn
+
+work_packges:
+  repos:
+    - networkmanager-fortisslvpn
+    - openfortivpn
+  aur:
+    - slack-desktop
+    - arc-kde-git
+
+pip_packages:
+  - flake8
+
+user: krovs
+
+git:
+  user: krovs
+  email: krovs.dev@gmail.com
