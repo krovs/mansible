@@ -4,17 +4,17 @@
     name: latte-dock
   become: yes
 
-# - name: Execute config script
-#   script: start.sh
-#   become: yes
-#   become_user: "{{ user }}"
+- name: Start latte
+  script: start.sh
+  become: yes
+  become_user: "{{ user }}"
 
 - name: Init latte
   command: "{{ item }}"
   with_items:
-    - latte-dock &
     - sleep 5
     - killall latte-dock
+  ignore_errors: yes
 
 - name: Copy config
   copy:
@@ -30,4 +30,8 @@
       --key currentLayout "krovo"
     - kwriteconfig5 --file lattedockrc --group UniversalSettings \
       --key lastNonAssignedLayout "krovo"
-    - latte-dock &
+
+- name: Start latte
+  script: start.sh
+  become: yes
+  become_user: "{{ user }}"
