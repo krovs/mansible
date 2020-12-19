@@ -5,7 +5,9 @@
   become: yes
 
 - name: Start latte
-  script: start.sh
+  shell: latte-dock &
+  async: 10
+  poll: 0
   become: yes
   become_user: "{{ user }}"
 
@@ -32,6 +34,8 @@
       --key lastNonAssignedLayout "krovo"
 
 - name: Start latte
-  script: start.sh
+  shell: latte-dock &
+  async: 10
+  poll: 0
   become: yes
   become_user: "{{ user }}"
