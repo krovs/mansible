@@ -38,7 +38,7 @@ desktop_packages:
     - solaar
   aur:
     - obinskit
-    - mulllvad-vpn
+    - mullvad-vpn
 
 work_packges:
   repos:
