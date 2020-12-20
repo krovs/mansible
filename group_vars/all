@@ -24,6 +24,7 @@ base_packages:
     - gnome-keyring
     - transmission-qt
     - traceroute
+    - etcher
   aur:
     - typora
     - spotify
