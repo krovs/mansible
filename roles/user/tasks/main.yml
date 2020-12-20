@@ -72,7 +72,7 @@
   become_user: "{{ user }}"
 
 - name: Change folders color
-  shell: papirus-folders -C cyan --theme Papirus-Dark
+  shell: papirus-folders -C nord --theme Papirus-Dark
   become: yes
   become_user: "{{ user }}"
 

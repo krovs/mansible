@@ -31,7 +31,7 @@
   become: yes
   become_user: "{{ user }}"
 
-- name: Execute
+- name: Execute xbindkeys
   shell: xbindkeys
   become: yes
   become_user: "{{ user }}"
