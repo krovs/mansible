@@ -68,11 +68,13 @@
 
 - name: Set Papirus-Dark icons theme
   shell: /usr/lib/plasma-changeicons Papirus-Dark
+  async: 10
+  poll: 0
   become: yes
   become_user: "{{ user }}"
 
 - name: Change folders color
-  shell: papirus-folders -C nord --theme Papirus-Dark
+  shell: papirus-folders -C nordic --theme Papirus-Dark
   become: yes
   become_user: "{{ user }}"
 
