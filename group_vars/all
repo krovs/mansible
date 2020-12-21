@@ -1,5 +1,6 @@
 base_packages:
   repos:
+    - pamac
     - docker
     - docker-compose
     - curl
@@ -40,7 +41,7 @@ desktop_packages:
     - mullvad-vpn
     - nordic-kde-git
 
-work_packges:
+work_packages:
   repos:
     - openfortivpn
     - networkmanager-fortisslvpn
