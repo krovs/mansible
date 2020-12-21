@@ -8,7 +8,6 @@ base_packages:
     - flameshot
     - unzip
     - virtualbox
-    - kvantum-qt5
     - papirus-icon-theme
     - base-devel
     - neofetch
