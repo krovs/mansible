@@ -1,0 +1,28 @@
+---
+- name: Work playbook
+  hosts: local
+  become: yes
+  roles:
+    - { role: pacman }
+    - { role: aur }
+    - { role: base-packages }
+    - { role: work-packages }
+    - { role: git }
+    - { role: docker }
+    - { role: python }
+    - { role: user }
+
+  post_tasks:
+    - name:  ToDo
+      debug:
+        msg:
+          - '##################################################################'
+          - ''
+          - '     Things left to do:'
+          - ''
+          - '     - select themes'
+          - '         - App style: Breeze, rest: arc'
+          - '     - set login screen'
+          - '     - set locales, add es'
+          - ''
+          - '##################################################################'

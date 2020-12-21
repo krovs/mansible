@@ -1,0 +1,11 @@
+---
+- name: Install work packages
+  pacman:
+    name: "{{ work_packages.repos }}"
+    state: present
+  become: yes
+
+- name: Install AUR work packages
+  aur: name="{{ work_packages.aur }}" aur_only=yes
+  become: yes
+  become_user: aur_builder
