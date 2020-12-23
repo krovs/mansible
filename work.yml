@@ -24,5 +24,7 @@
           - '         - App style: Breeze, rest: arc'
           - '     - set login screen'
           - '     - set locales, add es'
+          - '     - install virtualbox from wiki'
+          - '     - add vpn configs'
           - ''
           - '##################################################################'

@@ -8,7 +8,6 @@ base_packages:
     - pamac
     - flameshot
     - unzip
-    - virtualbox
     - papirus-icon-theme
     - base-devel
     - neofetch
@@ -52,7 +51,7 @@ work_packages:
 pip_packages:
   - flake8
 
-user: krovs
+user: rotero
 
 git:
   user: krovs
