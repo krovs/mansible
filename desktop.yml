@@ -28,5 +28,7 @@
           - '         - App style: Breeze, rest: nordic'
           - '     - set login screen'
           - '     - set locales, add es'
+          - '     - kde connect'
+          - '     - virtualbox'
           - ''
           - '##################################################################'
