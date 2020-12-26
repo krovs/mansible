@@ -51,8 +51,6 @@ work_packages:
 pip_packages:
   - flake8
 
-user: rotero
-
 git:
   user: krovs
   email: krovs.dev@gmail.com
