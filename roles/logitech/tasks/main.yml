@@ -4,7 +4,7 @@
 #     repo: https://github.com/krovs/mxmaster-mapper-linux.git
 #     dest: /tmp/logi
 #   become: yes
-#   become_user: "{{ lookup('env','USER') }}"
+#   become_user: "{{ user }}"
 
 # - name: Chmod executable
 #   file:
@@ -26,12 +26,12 @@
   copy:
     src: "xbindkeysrc"
     dest: ~{{ user }}/.xbindkeysrc
-    owner: "{{ lookup('env','USER') }}"
-    group: "{{ lookup('env','USER') }}"
+    owner: "{{ user }}"
+    group: "{{ user }}"
   become: yes
-  become_user: "{{ lookup('env','USER') }}"
+  become_user: "{{ user }}"
 
 - name: Execute xbindkeys
   shell: xbindkeys
   become: yes
-  become_user: "{{ lookup('env','USER') }}"
+  become_user: "{{ user }}"

@@ -51,6 +51,8 @@ work_packages:
 pip_packages:
   - flake8
 
+user: "{{ lookup('env', 'USER') }}"
+
 git:
   user: krovs
   email: krovs.dev@gmail.com
