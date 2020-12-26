@@ -3,19 +3,20 @@
   hosts: local
   become: yes
   roles:
-    - { role: pacman }
-    - { role: aur }
-    - { role: base-packages }
-    - { role: work-packages }
-    - { role: git }
-    - { role: docker }
-    - { role: python }
-    - { role: user }
+    # - { role: pacman }
+    # - { role: aur }
+    # - { role: base-packages }
+    # - { role: work-packages }
+    # - { role: git }
+    # - { role: docker }
+    # - { role: python }
+    # - { role: user }
 
   post_tasks:
     - name:  ToDo
       debug:
         msg:
+          - "{{ lookup('env','USER') }}"
           - '##################################################################'
           - ''
           - '     Things left to do:'

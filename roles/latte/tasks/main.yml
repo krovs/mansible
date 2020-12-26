@@ -9,7 +9,7 @@
   async: 10
   poll: 0
   become: yes
-  become_user: "{{ user }}"
+  become_user: "{{ lookup('env','USER') }}"
 
 - name: Init latte
   command: "{{ item }}"
@@ -22,8 +22,8 @@
   copy:
     src: krovo.layout.latte
     dest: ~{{ user }}/
-    owner: "{{ user }}"
-    group: "{{ user }}"
+    owner: "{{ lookup('env','USER') }}"
+    group: "{{ lookup('env','USER') }}"
 
 - name: Change layout
   command: "{{ item }}"
@@ -38,4 +38,4 @@
   async: 10
   poll: 0
   become: yes
-  become_user: "{{ user }}"
+  become_user: "{{ lookup('env','USER') }}"

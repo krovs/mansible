@@ -10,7 +10,7 @@
     value: "{{ git.user }}"
     scope: global
   become: yes
-  become_user: "{{ user }}"
+  become_user: "{{ lookup('env','USER') }}"
 
 - name: Configure git email
   git_config:
@@ -18,4 +18,4 @@
     value: "{{ git.email }}"
     scope: global
   become: yes
-  become_user: "{{ user }}"
+  become_user: "{{ lookup('env','USER') }}"

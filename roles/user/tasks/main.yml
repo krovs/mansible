@@ -1,15 +1,15 @@
 ---
 - name: Create Projects directory
   file:
-    group: '{{ user }}'
-    owner: '{{ user }}'
+    group: "{{ lookup('env','USER') }}"
+    owner: "{{ lookup('env','USER') }}"
     path: ~{{ user }}/Projects
     state: directory
 
 - name: Create gDrive directory
   file:
-    group: '{{ user }}'
-    owner: '{{ user }}'
+    group: "{{ lookup('env','USER') }}"
+    owner: "{{ lookup('env','USER') }}"
     path: ~{{ user }}/gDrive
     state: directory
 
@@ -17,35 +17,35 @@
 #   copy:
 #     src: "{{ item }}"
 #     dest: ~{{ user }}/.{{item}}
-#     owner: "{{ user }}"
-#     group: "{{ user }}"
+#     owner: "{{ lookup('env','USER') }}"
+#     group: "{{ lookup('env','USER') }}"
 #   with_items:
 #     - bashrc
 #     - bash_profile
 #   become: yes
-#   become_user: "{{ user }}"
+#   become_user: "{{ lookup('env','USER') }}"
 
 - name: Copy profile pic
   copy:
     src: face
     dest: ~{{ user }}/.face
-    owner: "{{ user }}"
-    group: "{{ user }}"
+    owner: "{{ lookup('env','USER') }}"
+    group: "{{ lookup('env','USER') }}"
 
 - name: Make link
   file:
     src: ~{{ user }}/.face
     dest: ~{{ user }}/.face.icon
     state: link
-    owner: "{{ user }}"
-    group: "{{ user }}"
+    owner: "{{ lookup('env','USER') }}"
+    group: "{{ lookup('env','USER') }}"
 
 - name: Copy wallpaper
   copy:
     src: "{{ item }}"
     dest: ~{{ user }}/Pictures
-    owner: "{{ user }}"
-    group: "{{ user }}"
+    owner: "{{ lookup('env','USER') }}"
+    group: "{{ lookup('env','USER') }}"
   with_items:
     - wallpapers/firewatch.png
     - wallpapers/space.png
@@ -56,34 +56,34 @@
   template:
     src: chgwall.sh.j2
     dest: /tmp/chgwall.sh
-    owner: "{{ user }}"
-    group: "{{ user }}"
+    owner: "{{ lookup('env','USER') }}"
+    group: "{{ lookup('env','USER') }}"
     mode: 0755
     
 - name: Execute the script
   shell:
     /tmp/chgwall.sh
   become: yes
-  become_user: "{{ user }}"
+  become_user: "{{ lookup('env','USER') }}"
 
 - name: Set Papirus-Dark icons theme
   shell: /usr/lib/plasma-changeicons Papirus-Dark
   async: 10
   poll: 0
   become: yes
-  become_user: "{{ user }}"
+  become_user: "{{ lookup('env','USER') }}"
 
 - name: Change folders color
   shell: papirus-folders -C nordic --theme Papirus-Dark
   become: yes
-  become_user: "{{ user }}"
+  become_user: "{{ lookup('env','USER') }}"
 
 - name: Copy yakuake profile
   copy:
     src: yakuakerc
     dest: ~{{ user }}/.config
-    owner: "{{ user }}"
-    group: "{{ user }}"
+    owner: "{{ lookup('env','USER') }}"
+    group: "{{ lookup('env','USER') }}"
 
 - name: Remove the user aur_builder
   user:
