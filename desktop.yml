@@ -29,6 +29,7 @@
           - '     - set login screen'
           - '     - set locales, add es'
           - '     - kde connect'
-          - '     - virtualbox'
+          - '     - install virtualbox from wiki'
+          - '     - sync firefox'
           - ''
           - '##################################################################'

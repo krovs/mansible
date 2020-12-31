@@ -3,13 +3,13 @@
   hosts: local
   become: yes
   roles:
-    # - { role: pacman }
-    # - { role: aur }
-    # - { role: base-packages }
-    # - { role: work-packages }
-    # - { role: git }
-    # - { role: docker }
-    # - { role: python }
+    - { role: pacman }
+    - { role: aur }
+    - { role: base-packages }
+    - { role: work-packages }
+    - { role: git }
+    - { role: docker }
+    - { role: python }
     - { role: wuser }
 
   post_tasks:
@@ -26,6 +26,6 @@
           - '     - set locales, add es'
           - '     - install virtualbox from wiki'
           - '     - add vpn configs'
-          - '     - firefox addons'
+          - '     - add firefox addons'
           - ''
           - '##################################################################'
