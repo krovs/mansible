@@ -10,7 +10,7 @@
     # - { role: git }
     # - { role: docker }
     # - { role: python }
-    # - { role: user }
+    - { role: wuser }
 
   post_tasks:
     - name:  ToDo

@@ -6,25 +6,6 @@
     path: ~{{ user }}/Projects
     state: directory
 
-- name: Create gDrive directory
-  file:
-    group: "{{ user }}"
-    owner: "{{ user }}"
-    path: ~{{ user }}/gDrive
-    state: directory
-
-# - name: Copy dotfiles
-#   copy:
-#     src: "{{ item }}"
-#     dest: ~{{ user }}/.{{item}}
-#     owner: "{{ user }}"
-#     group: "{{ user }}"
-#   with_items:
-#     - bashrc
-#     - bash_profile
-#   become: yes
-#   become_user: "{{ user }}"
-
 - name: Copy profile pic
   copy:
     src: face
@@ -71,16 +52,9 @@
   become_user: "{{ user }}"
 
 - name: Change folders color
-  shell: papirus-folders -C nordic --theme Papirus-Dark
+  shell: papirus-folders -C red --theme Papirus-Dark
   become: yes
   become_user: "{{ user }}"
-
-- name: Copy yakuake profile
-  copy:
-    src: yakuakerc
-    dest: ~{{ user }}/.config
-    owner: "{{ user }}"
-    group: "{{ user }}"
 
 - name: Remove the user aur_builder
   user:
