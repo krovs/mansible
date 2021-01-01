@@ -26,16 +26,16 @@ base_packages:
     - etcher
   aur:
     - typora
-    - spotify
     - visual-studio-code-bin
-    - insync
-    - insync-dolphin
     - papirus-folders
 
 desktop_packages:
   repos:
     - solaar
   aur:
+    - spotify
+    - insync
+    - insync-dolphin
     - obinskit
     - mullvad-vpn
     - nordic-kde-git
