@@ -50,6 +50,12 @@ work_packages:
 
 pip_packages:
   - flake8
+  - requests
+  - beautifulsoup4
+  - scapy
+  - impacket
+  - tqdm
+  - wheel
 
 user: "{{ lookup('env', 'USER') }}"
 
