@@ -75,13 +75,6 @@
   become: yes
   become_user: "{{ user }}"
 
-- name: Copy yakuake profile
-  copy:
-    src: yakuakerc
-    dest: ~{{ user }}/.config
-    owner: "{{ user }}"
-    group: "{{ user }}"
-
 - name: Remove the user aur_builder
   user:
     name: aur_builder
