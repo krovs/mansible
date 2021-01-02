@@ -10,7 +10,7 @@
     - { role: git }
     - { role: docker }
     - { role: python }
-    - { role: bluetooth }
+    # - { role: bluetooth }
     - { role: latte }
     - { role: logitech }
     - { role: user }
@@ -29,7 +29,7 @@
           - '     - set login screen'
           - '     - set locales, add es'
           - '     - kde connect'
-          - '     - install virtualbox from wiki'
+          - '     - install virtualbox from wiki -> https://wiki.manjaro.org/index.php/VirtualBox#Install_VirtualBox'
           - '     - sync firefox'
           - ''
           - '##################################################################'
