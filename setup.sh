@@ -3,7 +3,7 @@
 # Install ansible
 if ! hash ansible > /dev/null 2>&1; then
     echo "Installing Ansible..."
-    pacman -Sy ansible
+    sudo pacman -Sy ansible
 else
     echo "Ansible found"
 fi
