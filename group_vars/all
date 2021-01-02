@@ -28,6 +28,8 @@ base_packages:
     - typora
     - visual-studio-code-bin
     - papirus-folders
+    - nordic-kde-git
+    - arc-kde-git
 
 desktop_packages:
   repos:
@@ -38,7 +40,6 @@ desktop_packages:
     - insync-dolphin
     - obinskit
     - mullvad-vpn
-    - nordic-kde-git
 
 work_packages:
   repos:
@@ -46,7 +47,6 @@ work_packages:
     - networkmanager-fortisslvpn
   aur:
     - slack-desktop
-    - arc-kde-git
 
 pip_packages:
   - flake8
