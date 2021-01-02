@@ -17,11 +17,13 @@
     - sleep 5
     - killall latte-dock
   ignore_errors: yes
+  become: yes
+  become_user: "{{ user }}"
 
 - name: Copy config
   copy:
     src: krovo.layout.latte
-    dest: ~{{ user }}/
+    dest: ~{{ user }}/.config/latte
     owner: "{{ user }}"
     group: "{{ user }}"
 
@@ -32,6 +34,8 @@
       --key currentLayout "krovo"
     - kwriteconfig5 --file lattedockrc --group UniversalSettings \
       --key lastNonAssignedLayout "krovo"
+  become: yes
+  become_user: "{{ user }}"
 
 - name: Start latte
   shell: latte-dock &
