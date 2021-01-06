@@ -1,6 +1,6 @@
 # [WIP] Mansible
 
-This are my ansible playbooks for a first-time set up of a Manjaro environment depending on the device.
+These are my ansible playbooks for a first-start set up of a Manjaro environment depending on the device.
 
 ## Variables
 
