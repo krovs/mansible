@@ -30,11 +30,12 @@ base_packages:
     - papirus-folders
     - nordic-kde-git
     - arc-kde-git
+    - autofirma
 
 desktop_packages:
   repos:
     - solaar
-    - telegram
+    - telegram-desktop
     - authy
   aur:
     - spotify
@@ -42,6 +43,7 @@ desktop_packages:
     - insync-dolphin
     - obinskit
     - mullvad-vpn
+    - joplin-desktop
 
 work_packages:
   repos:
