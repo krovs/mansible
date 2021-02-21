@@ -24,6 +24,7 @@ base_packages:
     - transmission-qt
     - traceroute
     - etcher
+    - python-pygments
   aur:
     - typora
     - visual-studio-code-bin
