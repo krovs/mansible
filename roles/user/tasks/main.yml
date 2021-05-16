@@ -13,17 +13,16 @@
     path: ~{{ user }}/gDrive
     state: directory
 
-# - name: Copy dotfiles
-#   copy:
-#     src: "{{ item }}"
-#     dest: ~{{ user }}/.{{item}}
-#     owner: "{{ user }}"
-#     group: "{{ user }}"
-#   with_items:
-#     - bashrc
-#     - bash_profile
-#   become: yes
-#   become_user: "{{ user }}"
+- name: Copy dotfiles
+  copy:
+    src: "{{ item }}"
+    dest: ~{{ user }}/.{{item}}
+    owner: "{{ user }}"
+    group: "{{ user }}"
+  with_items:
+    - zshrc
+  become: yes
+  become_user: "{{ user }}"
 
 - name: Copy profile pic
   copy:
