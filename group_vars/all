@@ -31,7 +31,9 @@ base_packages:
     - papirus-folders
     - nordic-kde-git
     - arc-kde-git
-    - autofirma
+    - autofirma-bin
+    - burpsuite
+    - joplin-desktop
 
 desktop_packages:
   repos:
@@ -50,6 +52,7 @@ work_packages:
   repos:
     - openfortivpn
     - networkmanager-fortisslvpn
+    - keepassxc
   aur:
     - slack-desktop
 
